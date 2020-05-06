@@ -1,0 +1,167 @@
+
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+#include <string.h>
+
+
+
+
+#define CardDeck 52
+typedef int Deck[CardDeck];
+
+
+void ConfigureDeck(Deck);
+void Shuffle(Deck);
+
+void PlayerA(Deck);
+void PlayerB(Deck);
+
+void ShowCard(int);
+void ShowDeck(Deck);
+void Deal(Deck);
+
+int main()
+{
+	do{
+		printf("Welcome to the War card game. The game will now begin.\n")
+	  Deck s;
+        
+        srand(time(NULL));
+		ShuffleDeck(s);
+        ConfigureDeck(s);
+        ShowDeck(s);    
+        ShuffleDeck(s);
+        Deal(s);
+        
+		return 0;
+	
+}
+
+
+void ConfigureDeck(Deck deck) 
+{ 
+	int i;
+	for (i=0; i< CardDeck ; i++) 
+    { 
+        deck[i] = i; 
+    }
+}
+
+
+void ShowCard(int card) 
+{
+	static char Suit[4] = {'Diamond','Club','Heart','Spade'};
+	static char Face[13] = {'A', '2','3','4','5','6','7','8','9','10','Jack','Queen','King',};
+    printf ("%c%c", Face[card%13], Suit[card/13]);
+    
+}
+void ShowDeck(Deck deck) 
+{
+	int i;
+    
+	for (i=0; i<CardDeck; i++)
+    {
+		ShowCard(deck[i]);
+	}
+	printf(ShowCard());
+}
+
+
+void ShuffleDeck(Deck deck) 
+{
+	
+	int i;
+    
+	for (i = 0; i < CardDeck; i++) 
+    {
+		int d = rand()%52;
+        int temp = deck[d];
+        deck[d] = deck[i];
+        deck[i] = temp;
+              
+	}
+    for (i=0; i<CardDeck; i++) 
+    {
+        ShowDeck(deck[i]);
+    }
+}
+
+
+void Deal(Deck deck)
+{ 
+printf ("\n Player A's Cards: \n \n");
+    int CardDealt;
+    int PlayerA[26];
+    int PlayerB[26];
+    char card[2];
+    for(CardDealt = 0; CardDealt < 26; CardDealt++)
+    {      
+        PlayerA[CardDealt] = deck[CardDealt];    
+        ShowCard(PlayerA[CardDealt]);
+        printf (" %d");
+    }
+	
+	printf("\n PlayerB's Cards: \n \n");
+    int p;
+    for(CardDealt = 26, p =0; CardDealt < 52, p < 26; CardDealt++, p++)
+    {
+        PlayerB[p] = deck[CardDealt];
+        ShowCard(PlayerB[p]);
+        printf (" %d");
+    }
+    
+    int Num;
+    int PlayerAHand = 0;
+    int PlayerBHand = 0;
+    
+    printf(" ");
+    for(Num=0; Num<26; Num++)
+    {
+        if(PlayerAHand[Num] % 13 > PlayerBHand[Num] % 13)
+		{
+            printf("Player A wins \n");
+			PlayerAAmount = PlayerAAmount + 1;
+        }
+        
+        else if(PlayerAHand[Num] % 13 < PlayerBHand[Num] % 13)
+        {
+            printf("Player B wins \n");
+			PlayerBAmount = PlayerBAmount + 1;
+        }
+        else if (PlayerAHand[Num] % 13 == PlayerBHand[Num] % 13)
+        {
+            
+            if(PlayerAHand[Num] % 13 > PlayerBHand[Num] % 13)
+            {
+                printf("Player A wins the draw \n");
+				PlayerAAmount = PlayerAAmount + 1;
+                break;
+            }
+            
+            else if(PlayerAHand[Num] % 13 < PlayerBHand[Num] % 13)
+            {
+                printf("Player B wins the draw \n");
+				PlayerBAmount = PlayerBAmount + 1;
+                break;
+            }
+        }
+        
+        
+    }
+    
+    if(PlayerAAmount == 5)
+printf("Player A wins the game \n");
+    
+    else if (PlayerBAmount == 5)
+printf("Player B wins the game \n");
+    
+    return 0;
+    
+    
+}while (PlayerAAmount != 5 || PlayerBAmount != 5)
+}
+
+
+//the TAs from the computer lab assisted me a lot on this project, some 
+// parts may seem unclear or strange looking because of this 

@@ -1,0 +1,86 @@
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MIN_STRING_LEN 256
+#define MAX_STRING_LEN 1024
+
+void Load();
+void PrintArray1();
+void SortArray1();
+void PrintArray2();
+void SortArray2();
+
+main(){
+	
+	printf("This program takes arrays and sorts them. \n")
+	Load();
+	PrintArray1(Gstr1[]);
+	SortArray1(Gstr1[]);
+	PrintArray1(Gstr1[]);
+	
+	PrintArray2(Gstr2[]);
+	SortArray2(Gstr2[]);
+	PrintArray2(Gstr2[]);
+	
+	return 0;
+}
+
+
+void Load(){
+	
+	char * Gstr1[STRINGS];
+	char * Gstr2[STRINGS2];
+	
+}
+
+void PrintArray1(STRINGS)
+{
+	for (i = 0; i < STRINGS; i++)
+		printf("%c\n", * STRINGS[i];
+}
+	return 0
+}
+
+void SortArray1(char * a[], char Gstr1[STRINGS])
+{
+	char * swap;
+    int i,x;
+	
+	 for(i=0;x<STRINGS;i++){
+        for(x=i+1;j<STRINGS-1;j++){
+            if(*a[x-1]>*a[x]){
+                swap = Gstr1[x];
+                Gstr1[x] = Gstr1[x-1];
+                Gstr1[x-1] = swap;
+            }
+        }   
+    }
+	return Gstr1[];
+}
+
+void PrintArray2(STRINGS2)
+{
+	for (i = 0; i < STRINGS2; i++)
+		printf("%c\n", * STRINGS2[i];
+}
+	return 0
+}
+
+void SortArray2(char * a[], char Gstr2[STRINGS2])
+{
+	char * swap;
+    int i,x;
+	
+	 for(i=0;x<STRINGS2;i++){
+        for(x=i+1;j<STRINGS2-1;j++){
+            if(*a[x-1]>*a[x]){
+                swap = Gstr2[x];
+                Gstr2[x] = Gstr2[x-1];
+                Gstr2[x-1] = swap;
+            }
+        }   
+    }
+	return Gstr2[];
+}

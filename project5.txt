@@ -1,0 +1,157 @@
+#include 
+
+int MenuOption()
+int PrintMainMenu(void)
+int PrintMenuB(void)
+int PrintMenuC(void)
+int ConvertUpper(void)
+int CopyFile(void)
+int SaveFile(void)
+
+FILE *filePtr = fopen("records.txt", "r+");
+
+if (!filePtr)
+{
+	fclose(fopen("records.txt");
+	fprintf(stderr, "Cannot open file" /n);
+	exit(EXIT_FAILURE);
+}
+
+int main(int argc, char * argv[])
+{
+char c;
+int status;
+File *fp;
+do{
+	gets(records.txt, "r");
+	
+	printf("The file contains :\n", records.txt);
+	
+	while ((c = fgetc(fp)) != EOF)
+			printf("%c", c);
+		
+		
+	MenuOption = printMainMenu.c;
+	switch(MenuOption){
+	case 90; case 27;
+		break;
+	case 65: case 97:
+		MenuOption = PrintMenuA()
+		break;
+		
+	case 66: case 98:
+		MenuOption = PrintMenuB}
+		break;
+		
+		PrintMainMenu();
+		PrintMenuB();
+		PrintMenuC();
+		CopyFile();
+		ConvertUpper();
+		SaveFile();
+		
+		
+	   if (argc > 1)
+    {
+        fp = fopen(argv[1],"r+");
+        status = ConvertUpper(fp);
+	  if (status == 1)
+        {
+            printf(" Failed to convert" \n);
+            return 0;
+	}while (MenuOpton != 90 && NewOption != 122};
+
+int PrintMainMenu(void)
+	{
+	int choice = 0;
+	clrscr()
+	system("color 97")
+	default:
+		MenuOPtion = 0;
+	printf("It select main menu for config. \n")
+	printf(" It select A for config. \n")
+	printf(" It select B for config. \n")
+	printf(" It select C for config. \n")
+	printf(" It select Z for config. \n")
+	printf("MainMenu" \n)
+	choice = getchar(s);
+	
+	return choice;}
+}
+int CopyFile(FILE *fp){
+char ch, records.txt[20], newrecords.txt[20];
+FILE * records.txt, newrecords.txt;
+printf("Enter name of the file to copy \n");
+	gets(records.txt);
+	records.txt = fopen(records.txt, "r");
+	if (records.txt == NULL)
+	{
+	printf("File not open, exit \n");
+	Exit(EXITFAILURE);
+	}
+	printf("Enter target file name \n");
+		gets(newrecords.txt);
+		target = fopen(newrecords.txt, "w"))
+		
+if (target = NULL)
+{
+	fclose(records.txt);
+	printf("Press any key to exit \n");
+	exit(EXITFAILURE);
+	}
+	
+	While((ch=fgetc(records.txt))!=EOF){
+		if (ch == 44)
+			fputc(9, newrecords.txt);
+		else
+			fputc(ch, newrecords.txt);
+			
+	printf("Your done \n");
+	fclose(records.txt);
+	fclose(newrecords.txt);
+	}
+	
+	
+	
+}
+
+int ConvertUpper(FILE *fp)
+{
+	if (argc = 1)
+		fprint("Error, no file brought" /n)
+    char fp;
+    if (fp == NULL)
+    {
+        fprint("Unable to open file" /n);
+        return 1;
+    }
+    else
+    {
+        while (ch != EOF)
+        {
+            ch = fgetc(fp);
+            if ((ch >= 'a') && (ch <= 'z'))
+            {
+                ch = ch - 32;
+                fseek(fp,-1,SEEK_CUR);
+                fputc(ch,fp);
+            }    
+        }
+        return 0;
+    }
+}
+int SaveFile(FILE *fp)
+{
+	FILE *fp = fopen("newrecords.txt\n");
+		if (fp == NULL)
+		{
+		printf("Error opening file!\n");
+		exit(EXIT_FAILURE);
+			}
+	
+	char *text = "Enter words here";
+	fprintf(fp, "%s\n", text);
+
+
+	fclose(fp);
+}
